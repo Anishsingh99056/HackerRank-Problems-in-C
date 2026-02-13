@@ -1,0 +1,74 @@
+/*
+You are given an array of N integers. Compute the difference between the sum of elements stored at even indices and the sum of elements stored at odd indices.
+
+Use 0-based indexing
+Difference = (sum of even-index elements) − (sum of odd-index elements)
+Input Format
+
+First line: Integer N
+Second line: N space-separated integers
+Constraints
+
+1 ≤ N ≤ 10⁵
+−10⁹ ≤ A[i] ≤ 10⁹
+Output Format
+
+Print a single integer representing the required difference.
+Sample Input 0
+
+5
+1 2 3 4 5
+Sample Output 0
+
+3
+Sample Input 1
+
+4
+10 10 10 10
+Sample Output 1
+
+0
+Sample Input 2
+
+1
+0
+Sample Output 2
+
+0
+*/
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void difference()
+{
+     long int n;
+    scanf("%ld",&n);
+    long int a[n];
+     long int i;
+    for( i=0;i<=n-1;++i)
+    {
+        scanf("%ld",&a[i]);
+    }
+     long int odd_sum=0;
+     long int even_sum=0;
+    for(i=0;i<=n-1;i+=2)
+    {
+       even_sum=even_sum+a[i]; 
+    }
+    for(i=1;i<=n-1;i+=2)
+    {
+        odd_sum=odd_sum+a[i];
+    }
+     long int diff=(even_sum) - (odd_sum);
+    printf("%ld",diff);
+}
+int main() {
+    difference();
+    return 0;
+}
